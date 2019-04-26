@@ -15,7 +15,6 @@
 # 1 <= A.length <= 5000
 # 0 <= A[i] <= 5000
 
-
 listx = []
 listy = []
 for each in A:
