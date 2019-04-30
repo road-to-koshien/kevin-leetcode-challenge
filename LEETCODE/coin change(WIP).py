@@ -12,8 +12,15 @@
 # Note:
 # You may assume that you have an infinite number of each kind of coin.
 
-num = -9
-if num:
-    print('ok')
-else:
-    print('not ok')
+
+lists = ["vinh","thap","thai","thao"]
+str1=("vinh")	
+str2=("thao")	
+
+strs = [str1, str2]
+
+lists = list(filter(lambda a: a not in strs, lists))
+
+print(lists)
+
+
