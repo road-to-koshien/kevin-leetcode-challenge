@@ -12,15 +12,30 @@
 # Note:
 # You may assume that you have an infinite number of each kind of coin.
 
+A = "s z z z s"
+B = "s z ejt"
 
-lists = ["vinh","thap","thai","thao"]
-str1=("vinh")	
-str2=("thao")	
-
-strs = [str1, str2]
-
-lists = list(filter(lambda a: a not in strs, lists))
-
-print(lists)
+result = []
+list_del = []
+list_a = A.split()
+list_b = B.split()
+list_aset = list(set(list_a))
+list_bset = list(set(list_b))
+print(list_a.count('s'))
+for each in list_aset:
+    if list_a.count(each) > 1:
+        list_aset.remove(each)
+    continue
+print(list_aset)
+for each in list_bset:
+    if list_b.count(each) > 1:
+        list_bset.remove(each)
+for each in list_aset:
+    if each in list_bset:
+        list_del.append(each)
+for each in list_del:
+    list_aset.remove(each)
+    list_bset.remove(each)
+result = list_aset + list_bset
 
 

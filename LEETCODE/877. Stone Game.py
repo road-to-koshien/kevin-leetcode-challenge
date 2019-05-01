@@ -31,7 +31,7 @@
 
 class Solution:
     def stoneGame(self, piles: List[int]) -> bool:
-        sum_max = 0
+        sum_min = 0
         sum_check = 0
         if piles[0] > piles[-1]:
             max_move = piles[0]
@@ -43,7 +43,7 @@ class Solution:
         piles.pop(piles.index(max_temp))
         num_min = (len(piles))/2
         for x in range(0, int(num_min)):
-            max_current = max(piles)
+            max_current = min(piles)
             sum_max = sum_max + max_current
             piles.pop(piles.index(max_current))
         for each in piles:
