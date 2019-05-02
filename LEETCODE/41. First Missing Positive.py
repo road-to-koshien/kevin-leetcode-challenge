@@ -22,8 +22,6 @@ class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
         if 1 not in nums:
             return 1
-        if nums == [1]:
-            return 2
         else:
             i = 2
             while i < len(nums)+2:
