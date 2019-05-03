@@ -26,7 +26,7 @@
 class Solution:
     def wordPattern(self, pattern: str, str: str) -> bool:
         list_str = str.split(' ')
-        if len(set(list(pattern)))) != len(set(list_str)):
+        if len(pattern) != len(list_str):
             return False
         newdict = {}
         for i,each in enumerate(list_str): 
