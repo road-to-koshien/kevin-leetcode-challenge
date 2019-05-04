@@ -1,5 +1,11 @@
-s = 'cahuythap'
-for i in range(1, len(s)-1):
-    x = s[0:(i-1)]
-    y = s[i:len(s)]
-    print(x, y)
+s = "0P"
+del_list = [' ',':',',','.']
+list_strs = list(s)
+list_strs = list(filter(lambda x: x.isalpha() == True,list_strs))
+check = ''.join(list_strs).lower()
+print(check)
+print(check[::-1])
+if check[::1] == check[::-1]:
+    print(True)
+else:
+    print(False)
