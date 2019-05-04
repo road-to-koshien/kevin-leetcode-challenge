@@ -1,3 +1,5 @@
+3702
+
 It's pretty simple really:
 
 a[start:stop]  # items start through stop-1
