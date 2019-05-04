@@ -1,3 +1,6 @@
-a = {'ha':'ho', 'huy':'ho dem','thap':'lastname'}
-
-print(list(a.values()))
+temp = []
+s = "ha huy thap"
+b = s.split()
+print(b)
+b = list(filter(lambda a: a != ' ',b))
+print(b)
