@@ -14,4 +14,3 @@ class Solution:
         z = y[::-1]
         z = ' '.join(z)
         return z
-repush
