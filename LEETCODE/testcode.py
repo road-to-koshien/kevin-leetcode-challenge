@@ -1,11 +1,9 @@
-import math
-points = [[3,3],[5,-1],[-2,4]]
+from collections import Counter
+s = 'hahuythap'
+b = Counter(s)
+x = list(b.keys())
+y = list(b.values())
+print(x, y)
 
-def get_distance(coord):
-    distance = math.sqrt(coord[0]**2 + coord[1]**2)
-    return distance
-length_list = []
-for each in points:
-    length_list.append(get_distance(each))
-points = [x for _, x in sorted(zip(length_list, points))]
-print(points)
+new_list = [x for _,x in sorted(zip(y, x))]
+print(new_list)
