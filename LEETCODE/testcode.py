@@ -1,11 +1,12 @@
-nums = [1,2,3,4]
+nums = [1,2,3]
 
-import itertools
-res = []
-for i in range(1, len(nums)+1):
-    list_append = [list(x) for x in itertools.combinations(nums, i)]
-    res.append(list_append)
-res1 = list(itertools.chain.from_iterable(res))
-print(res1)
+# nums.sort()
+# result = [[]]
+# for num in nums:
+#     result += [i + [num] for i in result]
+# print(result)
 
-
+a = [1,2]
+b = [2,1]
+if set(a) == set(b):
+    print('ok')
