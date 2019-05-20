@@ -42,12 +42,12 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insert_after_node(self, prev_node, data):
-        if not prev_node:
-            print('There is no previous node')
-        new_node = Node(data)
-        new_node.next = prev_node.next
-        prev_node.next = new_node
+    # def insert_after_node(self, prev_node, data):
+    #     if not prev_node:
+    #         print('There is no previous node')
+    #     new_node = Node(data)
+    #     new_node.next = prev_node.next
+    #     prev_node.next = new_node
 
     def get_size(self):
         cur_node = self.head
@@ -62,11 +62,11 @@ llist.append(1)
 llist.append(2)
 llist.append(3)
 llist.prepend('A')
-llist.insert_after_node(llist.get_item(3), 'B')
-llist.print_list()
-print(llist.get_item(2))
-print(llist.get_size())
-
+# # llist.insert_after_node(llist.get_item(3), 'B')
+# llist.print_list()
+# print(llist.get_item(2))
+# print(llist.get_size())
+print(llist.head)
 
 
 
