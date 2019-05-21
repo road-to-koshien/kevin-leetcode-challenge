@@ -26,7 +26,6 @@ class Solution:
                 k = str(num).rindex(str(t))
                 list_num[i], list_num[k] = list_num[k], list_num[i]
                 break
-        print(list_num)
         res = [str(x) for x in list_num]
         res1 = int(''.join(res))
         return res1 
