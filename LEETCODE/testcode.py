@@ -1,28 +1,14 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution:
-    def deleteDuplicates(self, head: ListNode) -> ListNode:
-        if head is None:
-            return []
-        newdict = {}
-        cur_node = head
-        newdict[cur_node.val] = 1
-        last_node = cur_node
-        while cur_node and cur_node.next:
-            last_node = cur_node
-            data = cur_node.next.val
-            if data in newdict:
-                cur_node.next = cur_node.next.next
-                cur_node = cur_node.next
-            if data not in newdict:
-                newdict[data] = 1
-                cur_node = cur_node.next
-        if last_node.val in newdict:
-            last_node.next = None
-        if last_node.val not in newdict:
-        return head
-                
+num = 1993
+list_num = [int(x) for x in list(str(num))]
+list_sorted = sorted(list_num)
+list_sorted = list_sorted[::-1]
+for i in range(0, len(list_num)):
+    if list_num[i] != list_sorted[i]:
+        t = list_sorted[i]
+        k = str(num).rindex(str(t))
+        list_num[i], list_num[k] = list_num[k], list_num[i]
+        break
+print(list_num)
+res = [str(x) for x in list_num]
+res1 = int(''.join(res))
+print(res1)
