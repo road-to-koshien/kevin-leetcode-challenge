@@ -2,9 +2,8 @@
 I have a friend who is currently a web developer has challenged me to submit atleast 1 leetcode problem per day or I have to pay him 5$ as the penalty.
 But the truth is he can not even get 1 cent from me. I gotta show him what is the result for messing around with me.
 
-<<<<<<< HEAD
-=======
 ## Shame board
 - 11/05/2019 - Not Paid
+- 23/05/2019 - Not Paid
 - 24/05/2019 - Not Paid
->>>>>>> dccf11336744566d498279fc5043953b3f0bf7cf
+- 25/05/2019 - Not Paid
