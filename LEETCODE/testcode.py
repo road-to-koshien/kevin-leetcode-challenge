@@ -1,14 +1,6 @@
-queries = [[1,0],[-3,1],[-4,0],[2,3]]
-newdict = {}
-for each in queries:
-    if each[1] in newdict:
-        newdict[each[1]] = newdict[1] + each[0]
-    if each[1] not in newdict:
-        newdict[each[1]] = each[0]
-print(list(newdict.items()))
+def k_smallest(lists, k):
+    lists.sort()
+    return lists[:k]
 
-
-1 2 3 4 5 6
-
-0 1 2 3 4 6
-
+lists = [1,6,2,2,7,10]
+print(k_smallest(lists, 3))
