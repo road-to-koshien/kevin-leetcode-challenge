@@ -39,7 +39,7 @@ doorlist = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Doors).W
 level = doc.ActiveView.GenLevel
 
 for each in doorlist:
-	x = each.Host.Location.Curve.Direction
+	x = each.Host.Location.Curve.Direction  #Lấy vector của curve location của tường each là wall (each.host với each là door)
 	direction.append(x)
 	y = each.Location.Point
 	location.append(y)
@@ -71,3 +71,4 @@ for one in curve_list:
 TransactionManager.Instance.TransactionTaskDone()
 
 OUT = result
+
