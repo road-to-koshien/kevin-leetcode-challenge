@@ -1,2 +1,2 @@
-a = 12345
-print(a[0])
+a = [1,2,3,4]
+print(a.count(5))
