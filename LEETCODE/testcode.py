@@ -43,15 +43,12 @@
 #         res.append(newdict[each][0])
 # print(res)
 
-nums = [1,0,1,1,0,1]
-m = [str(x) for x in nums]
-m = ''.join(m)
-x = m.split('0')
-max_global = 0
-for each in m:
-    max_cur = len(each)
-    if max_cur > max_global:
-        max_global = max_cur
-print(max_global)
-print(x)
-            
+word = "Flag"
+# if word.upper():
+#     print(True)
+# if word[0].upper() == True and word[1:].lower() == True:
+#     print(True)
+# else:
+#     print(False)
+
+print(word.lower())
