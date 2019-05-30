@@ -43,12 +43,7 @@
 #         res.append(newdict[each][0])
 # print(res)
 
-word = "Flag"
-# if word.upper():
-#     print(True)
-# if word[0].upper() == True and word[1:].lower() == True:
-#     print(True)
-# else:
-#     print(False)
-
-print(word.lower())
+s = "loveleetcode"
+from collections import Counter
+x = list(Counter(s).keys()) 
+print(x)
