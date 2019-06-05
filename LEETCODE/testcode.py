@@ -1,5 +1,11 @@
-a = 123
-a = str(a)
-a = list(a)
-a = [int(x)]
-print(a)
+letters = ["c","f","j"]
+target = 'c'
+sums = letters + [target]
+sums = set(sums)
+sums = list(sums)
+sums.sort()
+t = sums.index(target)
+if t == len(sums) - 1:
+    print(sums[t])
+else:
+    print(sums[t+1])
