@@ -1,4 +1,5 @@
-nums = [1,2,3,6,2,3,4,7,8]
-print(sorted(nums))
-
-
+a = 123
+a = str(a)
+a = list(a)
+a = [int(x)]
+print(a)
