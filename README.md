@@ -7,6 +7,8 @@ But the truth is he can not even get 1 cent from me. I gotta show him what is th
 - 23/05/2019 - Not Paid
 - 24/05/2019 - Not Paid
 - 25/05/2019 - Not Paid
+- 09/06/2019 - Not Paid
+
 <<<<<<< HEAD
 >>>>>>> dccf11336744566d498279fc5043953b3f0bf7cf
 =======
