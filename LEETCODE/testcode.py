@@ -1,6 +1,5 @@
-import webbrowser
-
-origin = 'http://www.abcxyz.com/document'
-for i in range(1, 99999):
-    weblink = origin + '{0:05}'.format(i) + '.pdf'
-    webbrowser.open(weblink)
+a = [1,2,3,4,5]
+for i in range(0, len(a)):
+    a.pop()
+    print(len(a))
+print(a)
