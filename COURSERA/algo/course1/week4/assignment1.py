@@ -1,27 +1,29 @@
 #Uses Python3
-def binary_search(array, low, high, k):
-    mid = (low + high) // 2
-    if low > high:
-        return -1
-    if array[mid] > k:
-        high -= 1
-        return binary_search(array, low, high, k)
-    if array[mid] < k:
-        low += 1
-        return binary_search(array, low, high, k)
-    if array[mid] == k:
-        return mid
+def binary_search(array, x):
+    low = 0
+    high = len(array)-1
+    while low <= high:
+        mid = (low + high) // 2
+        if array[mid] == x:
+            return mid
+        if array[mid] < x:
+            low = mid + 1
+        if array[mid] > x:
+            high = mid - 1
+    return -1
 input1 = input().split()
 input2 = input().split()
 list1 = [int(input1[i]) for i in range(1, len(input1))]
 list2 = [int(input2[i]) for i in range(1, len(input2))]
 res = []
-low = 0
-high = len(list1) - 1
+newdict = {}
 for each in list2:
-    res.append(binary_search(list1, low, high, each))
-if list2 == []:
-    
+    if each not in newdict:
+        result = binary_search(list1, each)
+        newdict[each] = result
+        res.append(result)
+    else:
+        res.append(newdict[each])
 for each in res:
     print(each, end=' ')
 

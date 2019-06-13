@@ -11,9 +11,6 @@
 
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
         try:
             t = 1
             while nums.index(0) >= 0 and nums.index(0) < len(nums) - t:
