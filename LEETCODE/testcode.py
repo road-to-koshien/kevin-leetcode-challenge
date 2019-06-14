@@ -1,31 +1,60 @@
-def isValid(s):
-    from collections import Counter
-    x = Counter(s)
-    res = []
-    for each in x.values():
-        res.append(each)
-    set_res = list(set(res))
-    print(x)
-    if len(set_res) == 1:
-        return('YES')
-    elif len(set_res) == 2:
-        if abs(set_res[0] - set_res[1]) == 1:
-            if Counter(x.values())[set_res[0]] > 1:
-                if Counter(x.values())[set_res[1]] == 1:
-                    return('YES')
-            elif Counter(x.values())[set_res[1]] > 1:
-                if Counter(x.values())[set_res[0]] == 1:
-                    return('YES')
-            return('NO')
-        if set_res[0] == 1 and Counter(x.values())[set_res[0]] == 1:
-            return('YES')
-        if set_res[1] == 1 and Counter(x.values())[set_res[1]] == 1:
-            return('YES')
-        else:
-            return('NO')
-    else:
-        return('NO')
-x = 'aaaaabc'
-print(isValid(x))
+def mergeSort(arr): 
+    if len(arr) >1: 
+        mid = len(arr)//2 #Finding the mid of the array 
+        L = arr[:mid] # Dividing the array elements  
+        R = arr[mid:] # into 2 halves 
+        print(L,R)
+  
+        mergeSort(L) # Sorting the first half 
+        mergeSort(R) # Sorting the second half 
+  
+        i = j = k = 0
+
+        while i < len(L) and j < len(R): 
+            if L[i] < R[j]: 
+                arr[k] = L[i] 
+                i+=1
+            else: 
+                arr[k] = R[j] 
+                j+=1
+            k+=1
+          
+        while i < len(L): 
+            arr[k] = L[i] 
+            i+=1
+            k+=1
+          
+        while j < len(R): 
+            arr[k] = R[j] 
+            j+=1
+            k+=1
+  
+def printList(arr): 
+    for i in range(len(arr)):         
+        print(arr[i])
+    print() 
+  
+if __name__ == '__main__': 
+    arr = [8,7,6,5,4,3]  
+    print ("Given array is", )
+    printList(arr) 
+    mergeSort(arr) 
+    print("Sorted array is: ", )
+    printList(arr) 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
