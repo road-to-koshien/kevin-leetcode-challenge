@@ -1,45 +1,32 @@
-# The i-th person has weight people[i], and each boat can carry a maximum weight of limit.
+# Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] > B[i].
 
-# Each boat carries at most 2 people at the same time, provided the sum of the weight of those people is at most limit.
-
-# Return the minimum number of boats to carry every given person.  (It is guaranteed each person can be carried by a boat.)
+# Return any permutation of A that maximizes its advantage with respect to B.
 
 # Example 1:
 
-# Input: people = [1,2], limit = 3
-# Output: 1
-# Explanation: 1 boat (1, 2)
+# Input: A = [2,7,11,15], B = [1,10,4,11]
+# Output: [2,11,7,15]
 # Example 2:
 
-# Input: people = [3,2,2,1], limit = 3
-# Output: 3
-# Explanation: 3 boats (1, 2), (2) and (3)
-# Example 3:
+# Input: A = [12,24,8,32], B = [13,25,32,11]
+# Output: [24,32,8,12]
+def advantageCount(A, B):
+    A.sort()
+    B_sorted = sorted(B)[::-1]
+    newdict = {}
+    res = []
+    for b in B_sorted:
+        if b < A[-1]:
+            newdict.setdefault(b, []).append(A.pop())
+    for b in B:
+        try:
+            res.append(newdict[b].pop())
+        except:
+            res.append(A.pop())
+    return res
 
-# Input: people = [3,5,3,4], limit = 5
-# Output: 4
-# Explanation: 4 boats (3), (3), (4), (5)
-# Note:
-
-# 1 <= people.length <= 50000
-# 1 <= people[i] <= limit <= 30000
-
-def numRescueBoats(people, limit):
-    people.sort()
-    i, j = 0, len(people) - 1
-    ans = 0
-    while i <= j:
-        ans += 1
-        if people[i] + people[j] <= limit:
-            i += 1
-        j -= 1
-    return ans
-people = [3,3,4,5]
-limit = 5
-print(numRescueBoats(people, limit))
-    
-        
-
-
+A = [2,0,4,1,2]
+B = [1,3,0,0,2] #[24,32,8,12]
+print(advantageCount(A,B))
 
 
