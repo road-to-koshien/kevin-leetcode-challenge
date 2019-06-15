@@ -3,13 +3,12 @@ def mergeSort(arr):
         mid = len(arr)//2 #Finding the mid of the array 
         L = arr[:mid] # Dividing the array elements  
         R = arr[mid:] # into 2 halves 
-        print(L,R)
   
         mergeSort(L) # Sorting the first half 
         mergeSort(R) # Sorting the second half 
   
         i = j = k = 0
-
+        print(L[i], R[i])
         while i < len(L) and j < len(R): 
             if L[i] < R[j]: 
                 arr[k] = L[i] 

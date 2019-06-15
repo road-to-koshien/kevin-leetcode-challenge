@@ -22,7 +22,7 @@ class LinkedList:
                 cur_node = cur_node.next
                 i += 1
             else:
-                print('''Linked List doesn't this item''')
+                print('''Linked List doesn't have this item''')
         return cur_node.data
     
     def append(self, data):
