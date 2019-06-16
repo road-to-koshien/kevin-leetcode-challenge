@@ -1,25 +1,13 @@
-def checkword(word, pattern):
-    if len(word) != len(pattern):
-        return False
-    newdict = {}
-    for i,each in enumerate(pattern):
-        if each not in newdict:
-            newdict[each] = word[i]
-        else:
-            if newdict[each] != word[i]:
-                return False
-            else:
-                continue
-    if len(set(list(pattern))) != len(set(newdict.values())):
-        return False
-    return True
-res = []
-words = ["cba","xyx","yxx","yyx"]
-pattern = 'abc'
-for each in words:
-    if not checkword(each, pattern):
-        continue
-    else:
-        res.append(each)
-print(res)
-                
+def customSortString(S, T):
+    need = []
+    for each in S:
+        while each in T:
+            need.append(each)
+            T = T.replace(each, '', 1)
+        if each not in T:
+            continue
+    return ''.join(need) + T
+
+S = "cba"
+T = "abcd"
+print(customSortString(S,T))
