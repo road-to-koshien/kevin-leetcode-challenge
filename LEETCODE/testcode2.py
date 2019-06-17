@@ -1,55 +1,19 @@
-# There are N rooms and you start in room 0.  Each room has a distinct number in 0, 1, 2, ..., N-1, and each room may have some keys to access the next room. 
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+def groupAnagrams(strs):
+    seen = {}
+    res = []
+    for i,each in enumerate(strs):
+        x = sorted(each)
+        x = ''.join(x)
+        if x not in seen:
+            seen[x] = [each]
+            continue
+        if x in seen:
+            seen[x] = seen[x] + [each]
+            continue
+    print(seen)
+    for i,j in seen.items():
+        res.append(j)
+    return res
 
-# Formally, each room i has a list of keys rooms[i], and each key rooms[i][j] is an integer in [0, 1, ..., N-1] where N = rooms.length.  A key rooms[i][j] = v opens the room with number v.
-
-# Initially, all the rooms start locked (except for room 0). 
-
-# You can walk back and forth between rooms freely.
-
-# Return true if and only if you can enter every room.
-
-# Example 1:
-
-# Input: [[1],[2],[3],[]]
-# Output: true
-# Explanation:  
-# We start in room 0, and pick up key 1.
-# We then go to room 1, and pick up key 2.
-# We then go to room 2, and pick up key 3.
-# We then go to room 3.  Since we were able to go to every room, we return true.
-# Example 2:
-
-# Input: [[1,3],[3,0,1],[2],[0]]
-# Output: false
-# Explanation: We can't enter the room with number 2.
-# Note:
-
-# 1 <= rooms.length <= 1000
-# 0 <= rooms[i].length <= 1000
-# The number of keys in all rooms combined is at most 3000.
-
-def roomandkeys(rooms):
-    keys = [0]
-    checked = set(keys)
-    while keys:
-        i = keys.pop()
-        for key in rooms[i]:
-            if key not in checked:
-                keys.append(key)
-        checked.add(i)
-        if len(checked) == len(rooms):
-            return True
-    return len(checked) == len(rooms)
-        
-rooms = [[1],[2],[3],[]]
-print(roomandkeys(rooms))
-
-
-  
-
-            
-            
-                
-        
-
-
+print(groupAnagrams(strs))
