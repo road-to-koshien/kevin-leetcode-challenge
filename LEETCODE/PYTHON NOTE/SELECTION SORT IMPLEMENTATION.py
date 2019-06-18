@@ -1,4 +1,4 @@
-#Selection sort
+#Implementation of selection sort
 def selection_sort(arr):
     for i in range(0, len(arr)):
         min_index = i
