@@ -1,50 +1,28 @@
-def longestSubstring(s, k):
-    from collections import Counter
-    x = Counter(s)
-    failed = []
-    for i,j in x.items():
-        if j < k:
-            failed.append(i)
-    failed = set(failed)
-    start_index = 0
-    newdict = {}
-    max_global = 0
-    i = 0
-    while i < len(s): 
-        if s[i] in failed:
-            if newdict and min(list(newdict.values())) < k:
-                for i in range(start_index, i):
-                    check = s[start_index:i]
-                    m = Counter(check)
-                    if not newdict or start_index == i:
-                        break
-                    if min(list(m.values())) >= k: 
-                        max_cur = i - start_index
-                        if max_cur > max_global:
-                            max_global = max_cur
-                        break
-                    else:
-                        start_index += 1
-            i += 1
-            start_index = i
-            newdict = {}
-            continue
-        if s[i] in newdict:
-            newdict[s[i]] += 1
-            i += 1
-        else:
-            if s[i] not in newdict:
-                newdict[s[i]] = 1
-                i += 1
-        # print(newdict)
-        if min(list(newdict.values())) >= k:
-            max_cur = i - start_index 
-            if max_cur > max_global:
-                max_global = max_cur
-    return max_global
-
-s = "bbaaacbd"
-k = 3
-print(longestSubstring(s,k))
-
+def check_min(a,b):
+    x = a.split(':')
+    y = b.split(':')
+    x = [int(x) for x in x]
+    y = [int(x) for x in y]
+    if x[0] < y[0]:
+        x,y = y,x
+    if (x[0] -y[0]) <= 12:
+        return(abs((x[0]*60 + x[1]) - (y[0]*60 + y[1])))
+    else:
+        return(abs((x[0]*60 + x[1]) - ((y[0]+24)*60 + y[1])))
+timePoints = ["05:31","22:08","00:35"]
+check = []
+min_global = float('inf')
+for each in timePoints:
+    t = each.split(':')
+    t = int(t[0] + t[1])
+    check.append(t)
+timePoints_sorted = [x for _,x in sorted(zip(check, timePoints))]
+timePoints_sorted = timePoints_sorted + [timePoints_sorted[0]]
+print(timePoints_sorted)
+for i in range(len(timePoints_sorted)-1):
+    print(timePoints_sorted[i], timePoints_sorted[i+1])
+    min_cur = check_min(timePoints_sorted[i], timePoints_sorted[i+1])
+    if min_cur < min_global:
+        min_global = min_cur
+print(min_global)
 
