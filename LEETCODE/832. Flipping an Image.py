@@ -32,3 +32,4 @@ class Solution:
                 temp.append(1-item)
             res.append(temp)
         return res
+

@@ -2,7 +2,7 @@
 def solution(values):
     total = sum(values)
     if len(values) < 3 or total % 3:  # 1
-        return False
+        return 0
     third = total // 3
     table = [[0] * (len(values) + 1) for _ in range(third + 1)]  # 2
  
