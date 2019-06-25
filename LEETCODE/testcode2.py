@@ -1,8 +1,6 @@
-#Test lambda
-def multi(x,y):
-    return x*y
+import sys
+sys.path.append(r'D:')
+from testclass import *
 
-a = 11
-b = 10
-c = map(multi,(a,b))
-print(c)
+test = person('John', 38)
+print(test.printinfo())
