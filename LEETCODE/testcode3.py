@@ -1,3 +1,5 @@
-a = 'cdeab'
-a = a.find('cde')
-print(a)
+from collections import Counter
+a = "tattarrattat"
+x = Counter(a)
+print(len(a))
+print(x)
