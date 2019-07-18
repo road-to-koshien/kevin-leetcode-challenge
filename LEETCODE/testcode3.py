@@ -1,65 +1,44 @@
-a = [1,2,3]
-print(1 in a)
+# Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all elements in arr2 are also in arr1.
 
+# Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2.  Elements that don't appear in arr2 should be placed at the end of arr1 in ascending order.
 
+ 
 
--1200 1450 SP 1.1  2650            -700 1950 SP 1.19  2650
+# Example 1:
 
--1200 1650 SP 1.2   2850
+# Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6]
+# Output: [2,2,2,1,4,3,3,9,6,7,19]
+ 
 
--1240 900 SP 1.3   2140
+# Constraints:
 
--1240 1150 SP 1.4  2390
+# arr1.length, arr2.length <= 1000
+# 0 <= arr1[i], arr2[i] <= 1000
+# Each arr2[i] is distinct.
+# Each arr2[i] is in arr1.
 
--1190 1650 SP 1.5  2840
+from collections import Counter
+def relativeSortArray(arr1, arr2):
+    res1 = []
+    res2 = []
+    x = Counter(arr1)
+    y = Counter(arr2)
+    for each in arr2:
+        if each in x:
+            res1 = res1 + [each]*x[each]
+        else:
+            continue
+    for each in arr1:
+        if each in y:
+            continue
+        else:
+            res2.append(each)
+    res2.sort()
+    res = res1 + res2
+    return res
 
--1190 1450 SP 1.6  2640
-
--1170 1650 SP 1.7  2820
-
--1170 1450 SP 1.8  2620
-
--1150 1650 SP 1.9  2800
-
--1150 1450 SP 1.10  2600           -1450 1150 SP 1.13  2600   -1200 1400 SP 1.25  2600
-
--1320 1150 SP 1.11  2470
-
--1320 900 SP 1.12  2220
-
--1450 900 SP 1.13   2350
-
--1150 1950 SP 1.14  3100
-
--1150 2200 SP 1.15  3350
-
--920 2200 SP 1.16  3120
-
--920 1950 SP 1.17   2870
-
--700 2200 SP 1.18  2900
-
--865 1650 SP 1.19  2515
-
--865 1400 SP 1.20  2265
-
--1035 1650 SP 1.21  2685
-
--1035 1400 SP 1.22  2435
-
--1155 1650 SP 1.23  2805
-
--1155 1400 SP 1.24  2555
-
--700 3200 1.25   3900
-
--700 2900 1.26  3600
-
--575 3200 1.27 3775
-
--575 2900 1.28  3475
-
--350 3200 1.29  3550
-
--350 2900 1.30  3250
-
+arr1 = [28,6,22,8,44,17]
+arr2 = [22,28,8,6]
+print(relativeSortArray(arr1, arr2))
+    
+[22,28,8,6,17,44]
