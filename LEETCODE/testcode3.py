@@ -1,44 +1,45 @@
-# Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all elements in arr2 are also in arr1.
+# Given a matrix consisting of 0s and 1s, we may choose any number of columns in the matrix and flip every cell in that column.  Flipping a cell changes the value of that cell from 0 to 1 or from 1 to 0.
 
-# Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2.  Elements that don't appear in arr2 should be placed at the end of arr1 in ascending order.
+# Return the maximum number of rows that have all values equal after some number of flips.
 
  
 
 # Example 1:
 
-# Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6]
-# Output: [2,2,2,1,4,3,3,9,6,7,19]
- 
+# Input: [[0,1],[1,1]]
+# Output: 1
+# Explanation: After flipping no values, 1 row has all values equal.
+# Example 2:
 
-# Constraints:
+# Input: [[0,1],[1,0]]
+# Output: 2
+# Explanation: After flipping values in the first column, both rows have equal values.
+# Example 3:
 
-# arr1.length, arr2.length <= 1000
-# 0 <= arr1[i], arr2[i] <= 1000
-# Each arr2[i] is distinct.
-# Each arr2[i] is in arr1.
+# Input: [[0,0,0],[0,0,1],[1,1,0]]
+# Output: 2
+# Explanation: After flipping values in the first two columns, the last two rows have equal values.
 
-from collections import Counter
-def relativeSortArray(arr1, arr2):
-    res1 = []
-    res2 = []
-    x = Counter(arr1)
-    y = Counter(arr2)
-    for each in arr2:
-        if each in x:
-            res1 = res1 + [each]*x[each]
+def maxEqualRowsAfterFlips(A):
+    dic = {}
+    for row in A:
+        combination = []
+        for num in row:
+            converted_num = num ^ row[0]      # if first number in row is 0, go with , if 1 then flip all numbers in row
+                                              # Ex. [0,1,1] would become [0,1,1] and [1,0,0] would become [0,1,1]
+                                              # This is to make [1,0,0] same as [0,1,1]
+            combination.append(converted_num)
+
+        tup = tuple(combination)
+        print(tup)              # This is just to make this combination hashable in dictionary
+        if tup in dic:
+            dic[tup] += 1
         else:
-            continue
-    for each in arr1:
-        if each in y:
-            continue
-        else:
-            res2.append(each)
-    res2.sort()
-    res = res1 + res2
-    return res
+            dic[tup] = 1
 
-arr1 = [28,6,22,8,44,17]
-arr2 = [22,28,8,6]
-print(relativeSortArray(arr1, arr2))
-    
-[22,28,8,6,17,44]
+    return max(dic.values())
+
+A = [[0,0,0],[0,0,1],[1,1,0]]
+print(maxEqualRowsAfterFlips(A))
+
+
