@@ -10,6 +10,29 @@ h2{
 }
 
 input{
-    border: 2px solid rbg(144,0,0);
+    border: 2px solid blue;
 }
 
+div p{
+    background: yellow;
+}
+
+#textblock{
+    border: 5px solid gray;
+    width: 800px;
+    height: 400px;
+}
+
+a{
+    color: red;
+}   
+
+#itemone{
+    text-decoration: overline;
+    color: purple;
+}
+
+.feedback{
+    background-color: blue;
+    border: 4px dashed yellow;
+}
