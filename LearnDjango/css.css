@@ -1,0 +1,23 @@
+body{
+    background: yellow;
+}
+h1{
+    color: green;
+}
+
+li{
+    color:red;
+}
+
+.firstclass{
+    color: purple;
+}
+
+.secondclass{
+    color: pink;
+}
+
+#testid{
+    color: red;
+    text-decoration:line-through
+}
